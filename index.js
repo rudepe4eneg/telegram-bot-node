@@ -84,6 +84,7 @@ app.post('/web-data', async (req, res) => {
                     totalPrice,
             },
         });
+
         return res.status(200);
     } catch (error) {
         await bot.answerWebAppQuery(queryId, {
@@ -94,6 +95,7 @@ app.post('/web-data', async (req, res) => {
                 message_text: 'Не удалось приобрести товар',
             },
         });
+
         return res.status(500).json({});
     }
 });
